@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Inter, sans-serif; background: #070707; overflow-x: hidden; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(214,168,79,.16), transparent 26%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.05), transparent 22%),
+    linear-gradient(135deg, #070707, #15110A 48%, #070707);
+  z-index: -2;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+  z-index: -1;
+}
+
+.glass { background: rgba(255,247,230,.065); border: 1px solid rgba(255,247,230,.12); backdrop-filter: blur(18px); }
+.gold-text { background: linear-gradient(90deg, #FFF7E6, #D6A84F 42%, #FFE7A5); -webkit-background-clip: text; color: transparent; }
+.section { padding: 96px 0; }
+.container { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+.hero-overlay { background: linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.48), rgba(0,0,0,.84)); }
+.noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E"); }
+.btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-bold text-black shadow-gold transition hover:-translate-y-1 hover:bg-ivory; }
+.btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/20 px-6 py-3 font-bold text-ivory transition hover:-translate-y-1 hover:border-gold hover:text-gold; }
+.card-hover { transition: transform .35s ease, border-color .35s ease, background .35s ease; }
+.card-hover:hover { transform: translateY(-8px); border-color: rgba(214,168,79,.55); background: rgba(214,168,79,.08); }
