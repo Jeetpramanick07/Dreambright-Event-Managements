@@ -128,7 +128,7 @@ export default function Hero({
               transition={{ delay: 0.45 }}
               className="glass absolute bottom-20 left-16 rounded-[2rem] p-6 shadow-gold"
             >
-              <p className="text-5xl font-black text-gold">1000+</p>
+              <p className="text-5xl font-black text-gold">2000+</p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[.25em] text-ivory/70">
                 Events Done
               </p>
